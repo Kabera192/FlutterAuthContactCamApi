@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "502078607982",
+    "project_id": "auth-project-kabera",
+    "storage_bucket": "auth-project-kabera.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502078607982:android:f0e164860f25719d8d8c7f",
+        "android_client_info": {
+          "package_name": "com.example.calculator_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502078607982-rm46518f2ntds5n09m2jm2cs212os2tu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.calculator_app",
+            "certificate_hash": "52ca3d60c5a46b4ec3f7700b6f76b3534316662f"
+          }
+        },
+        {
+          "client_id": "502078607982-dk15hrjjoq715ev70tb43qu2b25ro48i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpNLf9Oy0lyxSRTrVFJ1X5ijvezKtHkqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "502078607982-dk15hrjjoq715ev70tb43qu2b25ro48i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "502078607982-1ldo4opcugq9olq1il5m5cio889lj5jg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.calculatorApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502078607982:android:bf6abc47296adaac8d8c7f",
+        "android_client_info": {
+          "package_name": "com.example.mobile_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502078607982-dk15hrjjoq715ev70tb43qu2b25ro48i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpNLf9Oy0lyxSRTrVFJ1X5ijvezKtHkqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "502078607982-dk15hrjjoq715ev70tb43qu2b25ro48i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "502078607982-1ldo4opcugq9olq1il5m5cio889lj5jg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.calculatorApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
