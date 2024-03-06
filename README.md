@@ -1,6 +1,11 @@
-# mobile_project
+# Mobile Programming Class Project
 
-A new Flutter project.
+This is a project undertaken while studying a course on mobile programming. The following are some of its features:
+
+- Google Sign in with Firebase.
+- Access to Contacts and Gallery of the phone.
+- Shared Preferences used to store the user's preferred theme
+- Drawer and Bottom Navigation
 
 ## Getting Started
 
