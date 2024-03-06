@@ -53,29 +53,29 @@ class _SideDrawerState extends State<SideDrawer> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          profilePic != null ?
-                          CircleAvatar(
-                            radius: 40,
-                            child: IconButton(
-                              onPressed: _selectImage,
-                              icon: Icon(Icons.camera_alt),
-                              padding: EdgeInsets.fromLTRB(60, 50, 0, 0),
-                              tooltip: 'Change Profile Picture',
-                            ),
-                            backgroundImage: MemoryImage(profilePic!), // Add the user's profile picture here
-                          )
-                          :
-                          CircleAvatar(
-                            radius: 40,
-                            child: IconButton(
-                              onPressed: _selectImage,
-                              icon: Icon(Icons.camera_alt),
-                              padding: EdgeInsets.fromLTRB(60, 50, 0, 0),
-                              tooltip: 'Change Profile Picture',
-                            ),
-                            backgroundImage: NetworkImage(user!
-                                .photoURL!) // Add the user's profile picture here
-                          ),
+                          profilePic != null
+                              ? CircleAvatar(
+                                  radius: 40,
+                                  child: IconButton(
+                                    onPressed: _selectImage,
+                                    icon: Icon(Icons.camera_alt),
+                                    padding: EdgeInsets.fromLTRB(60, 50, 0, 0),
+                                    tooltip: 'Change Profile Picture',
+                                  ),
+                                  backgroundImage: MemoryImage(
+                                      profilePic!), // Add the user's profile picture here
+                                )
+                              : CircleAvatar(
+                                  radius: 40,
+                                  child: IconButton(
+                                    onPressed: _selectImage,
+                                    icon: Icon(Icons.camera_alt),
+                                    padding: EdgeInsets.fromLTRB(60, 50, 0, 0),
+                                    tooltip: 'Change Profile Picture',
+                                  ),
+                                  backgroundImage: NetworkImage(user!
+                                      .photoURL!) // Add the user's profile picture here
+                                  ),
                           Column(
                             children: [
                               Text(
@@ -134,6 +134,11 @@ class _SideDrawerState extends State<SideDrawer> {
                   //_navigateToTab(3);
                 },
               ),
+              ListTile(
+                leading: Icon(Icons.logout),
+                title: Text('Logout'),
+                onTap: signUserOut,
+              ),
               // Add additional items for drawer navigation as needed
             ],
           ),
@@ -147,5 +152,9 @@ class _SideDrawerState extends State<SideDrawer> {
     setState(() {
       profilePic = img;
     });
+  }
+
+  void signUserOut() async {
+    await FirebaseAuth.instance.signOut();
   }
 }

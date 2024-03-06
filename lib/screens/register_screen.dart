@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, deprecated_member_use, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -7,8 +7,10 @@ import 'package:mobile_project/components/gradient_button.dart';
 import 'package:mobile_project/components/text_field.dart';
 import 'package:mobile_project/services/auth_service.dart';
 
-class LoginScreen extends StatelessWidget {
-  final userNameController = TextEditingController();
+class RegisterScreen extends StatelessWidget {
+  RegisterScreen({super.key});
+
+  final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
   @override
@@ -34,42 +36,34 @@ class LoginScreen extends StatelessWidget {
 
             // Text fields
             TextFieldWidget(
-              controller: userNameController,
+              controller: usernameController,
               hintText: 'example@domain.com',
               icon: Icons.email,
             ),
             SizedBox(height: 20),
             TextFieldWidget(
               controller: passwordController,
-              hintText: 'password',
+              hintText: 'Password',
               icon: Icons.lock,
               obscureText: true,
             ),
             SizedBox(height: 10),
-            // Forgot password link
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Forgot Password?',
-                style: TextStyle(fontSize: 12),
-              ),
+            TextFieldWidget(
+              controller: passwordController,
+              hintText: 'Confirm Password',
+              icon: Icons.lock,
+              obscureText: true,
             ),
-
-            SizedBox(height: 20),
-
-            // Login button
-            GradientButton(
-                text: 'Login',
-                onPressed: signUserIn,
-                backgColor: Colors.purple,
-                txtColor: Colors.white),
+            SizedBox(height: 10),
 
             SizedBox(height: 20),
 
             GradientButton(
                 text: 'Register',
-                onPressed: () {
-                  // Handle login button press
+                onPressed: () async {
+                  await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                      email: usernameController.text,
+                      password: passwordController.text);
                 },
                 backgColor: Colors.white,
                 txtColor: Colors.purple),
@@ -114,10 +108,5 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void signUserIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: userNameController.text, password: passwordController.text);
   }
 }
